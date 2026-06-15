@@ -136,52 +136,71 @@
 <section class="hero">
   <div class="wrap" style="padding:clamp(28px,5vw,52px) 0;max-width:900px">
     <div class="center" data-reveal>
-      <span class="eyebrow shead--center" style="color:var(--gold-soft)">Can you go yard?</span>
-      <h1 class="display">The Kemuel Home-Run Derby</h1>
-      <p class="hero__lead mx-auto" style="text-align:center">Read the pitch, time your swing, and barrel it up. Fastballs, curveballs, sliders, and changeups are coming. Launch one over the fence and you unlock the 30-Day Swing Challenge for <strong>$19.99</strong> — plus a <strong>free session with any coach</strong>.</p>
+      <span class="eyebrow shead--center" style="color:var(--gold-soft)">Mariners vs. Sreniram</span>
+      <h1 class="display">The Kemuel Showdown</h1>
+      <p class="hero__lead mx-auto" style="text-align:center">Bat for the <strong>Mariners</strong> (humans in fish suits) against the <strong>Sreniram</strong> (fish dressed as humans). Make 3 outs and the game flips — now <strong>you pitch</strong>. Launch a home run while batting to unlock the 30-Day Challenge for <strong>$19.99</strong> + a <strong>free coach session</strong>.</p>
     </div>
 
-    <!-- GAME -->
     <div class="game" id="hr-game" data-reveal>
       <div class="game__hud">
-        <span>AB <b id="g-ab">1</b></span>
+        <span id="g-side">⚾ Batting</span>
+        <span>Inn <b id="g-inn">1</b></span>
         <span>Count <b id="g-count">0-0</b></span>
         <span>Outs <b id="g-outs">0</b></span>
         <span>Hits <b id="g-hits">0</b></span>
         <span>HR <b id="g-hr">0</b></span>
         <span id="g-pitch">Pitch: —</span>
-        <span id="g-exit">EV: —</span>
         <span id="g-dist">Dist: —</span>
       </div>
-      <canvas id="g-canvas" width="720" height="470" aria-label="Home run derby game"></canvas>
-      <div class="game__controls">
+      <canvas id="g-canvas" width="720" height="470" aria-label="Mariners vs Sreniram baseball game"></canvas>
+
+      <!-- BAT controls -->
+      <div class="game__controls" id="bat-controls">
         <button class="btn btn--primary btn--lg" id="g-swing">SWING! <span class="note" style="color:#ffd;font-weight:400">(Space / tap)</span></button>
         <button class="btn btn--ghost btn--sm" id="g-reset">Reset</button>
       </div>
-      <p class="note center" id="g-msg">Tap <b>SWING</b> the instant the ball reaches the gold contact zone. Watch out — not every pitch is a fastball.</p>
+
+      <!-- PITCH controls -->
+      <div class="game__controls" id="pitch-controls" hidden style="flex-direction:column;gap:10px">
+        <div class="pill-row" style="justify-content:center"><span class="note" style="align-self:center">Pitch:</span>
+          <button class="chip" data-ptype="fastball" aria-pressed="true">Fastball</button>
+          <button class="chip" data-ptype="curve" aria-pressed="false">Curveball</button>
+          <button class="chip" data-ptype="slider" aria-pressed="false">Slider</button>
+          <button class="chip" data-ptype="change" aria-pressed="false">Changeup</button>
+        </div>
+        <div class="pill-row" style="justify-content:center"><span class="note" style="align-self:center">Aim:</span>
+          <button class="chip" data-aim="in" aria-pressed="false">Inside</button>
+          <button class="chip" data-aim="mid" aria-pressed="true">Middle</button>
+          <button class="chip" data-aim="out" aria-pressed="false">Outside</button>
+        </div>
+        <div class="pill-row" style="justify-content:center">
+          <button class="btn btn--orange btn--lg" id="g-throw">THROW PITCH</button>
+          <button class="btn btn--ghost btn--sm" id="g-reset2">Reset</button>
+        </div>
+      </div>
+
+      <p class="note center" id="g-msg">Tap <b>SWING</b> when the ball reaches the gold contact zone. Watch the pitch type!</p>
     </div>
 
-    <!-- WIN OVERLAY -->
     <div class="card card--feature mt-3" id="g-win" hidden data-reveal>
       <div class="card__body center">
         <span class="badge badge--elite">💥 Home Run!</span>
         <h2 class="mt-1">You earned the deal</h2>
-        <p class="text-muted">Unlock the full 30-Day Swing Challenge for <strong>$19.99</strong> (was $99.99) — and get a <strong>free session with any coach</strong> in the directory when you start.</p>
+        <p class="text-muted">Unlock the full 30-Day Swing Challenge for <strong>$19.99</strong> (was $99.99) — plus a <strong>free session with any coach</strong> when you start.</p>
         <div class="hero__cta" style="justify-content:center">
           <a href="REPLACE_STRIPE_LINK" class="btn btn--primary btn--lg">Claim $19.99 + Free Coach Session</a>
           <a href="coaches.html" class="btn btn--gold">Browse Coaches</a>
         </div>
-        <p class="note mt-2">Your free coach session is booked after purchase. We don't guarantee specific results or coach availability.</p>
+        <p class="note mt-2">Free coach session booked after purchase. We don't guarantee specific results or coach availability.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY IT MATTERS -->
 <section class="section section--tint">
   <div class="wrap center" data-reveal style="max-width:720px">
     <h2>Real hitting is timing, focus, and reps</h2>
-    <p class="lead">This game is fun — but the real version is the 30-day plan: gyroball wrist work, pitching-machine timing against real speeds, box jumps, and a daily ritual you do with your kid that builds discipline on and off the field.</p>
+    <p class="lead">This game is fun — the real version is the 30-day plan: gyroball wrist work, pitching-machine timing, box jumps, and a daily ritual you do with your kid that builds discipline on and off the field.</p>
     <div class="hero__cta" style="justify-content:center">
       <a href="checkout.html#program" class="btn btn--primary btn--lg">Get the 30-Day Guide — $19.99</a>
       <a href="free-7-day.html" class="btn btn--ghost">Or start free for 7 days</a>
@@ -191,7 +210,7 @@
 
 <style>
 .game{background:linear-gradient(180deg,#0a2647,#071E3D);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:16px;box-shadow:var(--shadow-md);margin-top:18px}
-.game__hud{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.04em;font-size:.8rem;color:#A9BAD0;margin-bottom:10px}
+.game__hud{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.04em;font-size:.8rem;color:#A9BAD0;margin-bottom:10px}
 .game__hud b{color:var(--gold);font-size:1rem}
 #g-canvas{width:100%;height:auto;display:block;border-radius:var(--r-md);background:#0c2f57;touch-action:manipulation;cursor:pointer}
 .game__controls{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}
@@ -202,167 +221,179 @@
 (function(){
   var cv=document.getElementById('g-canvas'); if(!cv) return;
   var ctx=cv.getContext('2d'), W=cv.width, H=cv.height;
-  var horizonY=120, contactY=388, plateX=W/2, sweetW=70;
-  var FENCE_FT=330;
-  var raf, last=0;
+  var horizonY=120, contactY=386, plateX=W/2, sweetW=66, FENCE=330;
+  var raf;
 
   var PITCHES={
-    fastball:{name:'Fastball', speed:6.0, color:'#ffffff', breakX:0,   drop:0.0,  ev:'high'},
-    curve:   {name:'Curveball',speed:4.4, color:'#ffd27a', breakX:46,  drop:1.5,  ev:'mid'},
-    slider:  {name:'Slider',   speed:5.0, color:'#9ad0ff', breakX:80,  drop:0.4,  ev:'mid'},
-    change:  {name:'Changeup', speed:3.5, color:'#c7f9c0', breakX:18,  drop:0.6,  ev:'low'}
+    fastball:{name:'Fastball',speed:6.0,color:'#ffffff',breakX:0,drop:0},
+    curve:{name:'Curveball',speed:4.4,color:'#ffd27a',breakX:46,drop:1.5},
+    slider:{name:'Slider',speed:5.0,color:'#9ad0ff',breakX:80,drop:0.4},
+    change:{name:'Changeup',speed:3.5,color:'#c7f9c0',breakX:18,drop:0.6}
   };
   var KEYS=Object.keys(PITCHES);
 
-  var S;
+  var S, sel={type:'fastball',aim:'mid'};
   function reset(){
     cancelAnimationFrame(raf);
-    S={ab:1,balls:0,strikes:0,outs:0,hits:0,hr:0,phase:'ready',
-       ball:null,bat:0,batT:0,flash:0,result:'',pitch:null,
-       flight:null,particles:[],dist:0,ev:0};
+    S={side:'bat',inn:1,balls:0,strikes:0,outs:0,hits:0,hr:0,
+       phase:'ready',ball:null,swung:false,pitch:null,flight:null,
+       moundEmo:'idle',plateEmo:'idle',emoT:0,flash:0,dist:0,fw:[],bat:0};
     document.getElementById('g-win').hidden=true;
-    msg('Tap <b>SWING</b> the instant the ball reaches the gold contact zone. Watch out — not every pitch is a fastball.');
+    showControls();
+    msg('Tap <b>SWING</b> when the ball reaches the gold contact zone. Watch the pitch type!');
     hud(); pitchIn(900); loop();
   }
+  function showControls(){
+    document.getElementById('bat-controls').hidden = S.side!=='bat';
+    document.getElementById('pitch-controls').hidden = S.side!=='pitch';
+  }
   function hud(){
-    set('g-ab',S.ab); set('g-count',S.balls+'-'+S.strikes); set('g-outs',S.outs);
-    set('g-hits',S.hits); set('g-hr',S.hr);
+    document.getElementById('g-side').textContent = S.side==='bat'?'⚾ You\'re Batting':'🥎 You\'re Pitching';
+    set('g-inn',S.inn);set('g-count',S.balls+'-'+S.strikes);set('g-outs',S.outs);set('g-hits',S.hits);set('g-hr',S.hr);
     document.getElementById('g-pitch').textContent='Pitch: '+(S.pitch?S.pitch.name:'—');
-    document.getElementById('g-exit').textContent='EV: '+(S.ev?Math.round(S.ev)+' mph':'—');
     document.getElementById('g-dist').textContent='Dist: '+(S.dist?Math.round(S.dist)+' ft':'—');
   }
-  function set(id,v){var e=document.getElementById(id); if(e)e.textContent=v;}
+  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
   function msg(h){document.getElementById('g-msg').innerHTML=h;}
+  function emote(mound,plate,frames){ if(mound)S.moundEmo=mound; if(plate)S.plateEmo=plate; S.emoT=frames||80; }
 
-  function pitchIn(delay){
-    S.phase='windup'; S.swung=false; S.bat=0;
-    var key=KEYS[Math.floor(Math.random()*KEYS.length)];
-    var p=PITCHES[key];
-    S.pitch=p;
-    var side=Math.random()<0.5?-1:1;
-    var startX=plateX+(Math.random()*60-30);
-    S.ball={x:startX,sx:startX,y:horizonY,r:4,speed:p.speed*(0.92+Math.random()*0.16),
-            breakX:p.breakX*side,drop:p.drop,active:false,start:performance.now()+(delay||600),inZone:Math.random()<0.78};
-    hud();
-  }
-
-  // audio
+  // ---------- audio ----------
   var actx;
   function sound(type){
-    try{ actx=actx||new (window.AudioContext||window.webkitAudioContext)(); }catch(e){return;}
+    try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();}catch(e){return;}
     var t=actx.currentTime;
-    if(type==='crack'){
-      var o=actx.createOscillator(),g=actx.createGain();
-      o.type='triangle'; o.frequency.setValueAtTime(420,t); o.frequency.exponentialRampToValueAtTime(120,t+0.08);
-      g.gain.setValueAtTime(0.4,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.12);
-      o.connect(g).connect(actx.destination); o.start(t); o.stop(t+0.13);
-    } else if(type==='cheer'){
-      var bs=actx.createBufferSize?0:0; var buf=actx.createBuffer(1,actx.sampleRate*0.7,actx.sampleRate);
-      var d=buf.getChannelData(0); for(var i=0;i<d.length;i++){d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.5);}
-      var src=actx.createBufferSource(); src.buffer=buf;
-      var f=actx.createBiquadFilter(); f.type='bandpass'; f.frequency.value=900;
-      var g2=actx.createGain(); g2.gain.value=0.35;
-      src.connect(f).connect(g2).connect(actx.destination); src.start(t);
-    } else if(type==='miss'){
-      var o2=actx.createOscillator(),g3=actx.createGain();
-      o2.type='sawtooth'; o2.frequency.setValueAtTime(160,t); o2.frequency.exponentialRampToValueAtTime(60,t+0.18);
-      g3.gain.setValueAtTime(0.18,t); g3.gain.exponentialRampToValueAtTime(0.001,t+0.2);
-      o2.connect(g3).connect(actx.destination); o2.start(t); o2.stop(t+0.2);
-    }
+    if(type==='crack'){var o=actx.createOscillator(),g=actx.createGain();o.type='triangle';o.frequency.setValueAtTime(420,t);o.frequency.exponentialRampToValueAtTime(120,t+0.08);g.gain.setValueAtTime(0.4,t);g.gain.exponentialRampToValueAtTime(0.001,t+0.12);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+0.13);}
+    else if(type==='cheer'){var buf=actx.createBuffer(1,actx.sampleRate*0.7,actx.sampleRate),d=buf.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.5);var s=actx.createBufferSource();s.buffer=buf;var f=actx.createBiquadFilter();f.type='bandpass';f.frequency.value=900;var g2=actx.createGain();g2.gain.value=0.35;s.connect(f).connect(g2).connect(actx.destination);s.start(t);}
+    else if(type==='miss'){var o2=actx.createOscillator(),g3=actx.createGain();o2.type='sawtooth';o2.frequency.setValueAtTime(150,t);o2.frequency.exponentialRampToValueAtTime(60,t+0.18);g3.gain.setValueAtTime(0.16,t);g3.gain.exponentialRampToValueAtTime(0.001,t+0.2);o2.connect(g3).connect(actx.destination);o2.start(t);o2.stop(t+0.2);}
   }
 
-  function swing(e){
-    if(e) e.preventDefault();
-    if(S.phase!=='pitching'){ return; }
-    S.swung=true; S.batT=performance.now(); S.bat=0.0001;
-    judge();
-  }
-
-  function judge(){
-    var b=S.ball;
-    var diff=b.y-contactY;              // <0 early, >0 late
-    var timeQ=Math.max(0,1-Math.abs(diff)/46);
-    var posQ =Math.max(0,1-Math.abs(b.x-plateX)/sweetW);
-    var q=timeQ*posQ;
-    if(q<0.16){                         // swing & miss
-      S.flash=6; sound('miss'); S.strikes++;
-      outcome('strike','❌ Swing and a miss — '+(diff<0?'too early':'too late')+' on the '+S.pitch.name.toLowerCase()+'.');
-      return;
-    }
-    // contact!
-    sound('crack'); S.flash=14;
-    var angle=28 - diff*0.55 + (Math.random()*6-3);   // early=higher
-    angle=Math.max(4,Math.min(46,angle));
-    var ev=68 + q*42 + (S.pitch.ev==='high'?4:S.pitch.ev==='low'?-3:0);
-    var rad=angle*Math.PI/180;
-    var dist=(ev*ev*Math.sin(2*rad))/22;              // tuned range (ft)
-    S.ev=ev; S.dist=dist; hud();
-    if(dist>=FENCE_FT && angle>=16 && angle<=42){
-      startFlight(angle,ev,dist,'HR');
-    } else if(dist>=235 && angle>10){
-      startFlight(angle,ev,dist,'XBH');
-    } else if(dist>=120 && angle<=30){
-      startFlight(angle,ev,dist,'SINGLE');
+  // ---------- pitching the ball (used in both phases) ----------
+  function pitchIn(delay){
+    S.phase = S.side==='bat' ? 'windup' : 'pwait';
+    S.swung=false; S.bat=0; S.dist=0;
+    if(S.side==='bat'){
+      var p=PITCHES[KEYS[Math.floor(Math.random()*KEYS.length)]];
+      launchPitch(p,(Math.random()<0.5?-1:1),Math.random()<0.78,delay);
+      S.plateEmo='focus'; S.moundEmo='focus';
     } else {
-      startFlight(angle,ev,dist, angle>42?'POP':'GROUND');
-    }
-  }
-
-  function startFlight(angle,ev,dist,kind){
-    S.phase='flight';
-    var rad=angle*Math.PI/180;
-    var v=2.6+ev/30;
-    S.flight={x:plateX,y:contactY,vx:(Math.random()<0.5?-1:1)*Math.cos(rad)*v*0.6,
-              vy:-Math.sin(rad)*v*2.4,g:0.052,kind:kind,dist:dist,t:0,landed:false,trail:[]};
-  }
-
-  function finishFlight(){
-    var f=S.flight;
-    if(f.kind==='HR'){
-      S.hr++; S.hits++; burst();
-      for(var i=0;i<3;i++) setTimeout(function(){sound('cheer');}, i*120);
-      outcome('hr','💥 <b>HOME RUN!</b> '+Math.round(f.dist)+' ft, '+Math.round(S.ev)+' mph exit velo. You crushed it!');
-      win(); return;
-    }
-    if(f.kind==='XBH'){ S.hits++; outcome('hit','🔥 Extra-base hit! '+Math.round(f.dist)+' ft. So close to a homer — swing again.'); }
-    else if(f.kind==='SINGLE'){ S.hits++; outcome('hit','✅ Base hit! Line drive. Now get under one for the homer.'); }
-    else if(f.kind==='POP'){ S.outs++; outcome('out','🟡 Pop-up — got under it. Stay level and centered.'); }
-    else { S.outs++; outcome('out','🟡 Ground ball — a touch late. Try to catch it out front.'); }
-  }
-
-  function outcome(type,text){
-    msg(text); hud();
-    if(S.strikes>=3){ S.strikes=0; S.balls=0; S.outs++; msg(text+' &nbsp;<b>Strikeout.</b>'); }
-    if(S.outs>=3){ S.phase='over'; msg(text+' &nbsp;🧢 Side retired — tap <b>Reset</b> to bat again. One homer unlocks the deal!'); hud(); return; }
-    if(type==='strike'||type==='hit'||type==='out'){
-      if(type!=='strike'){ S.ab++; S.balls=0; S.strikes=0; }
-      S.phase='cooldown';
-      setTimeout(function(){ if(S.phase!=='over'&&S.phase!=='won') pitchIn(500); }, type==='strike'?700:1100);
+      msg('Pick a pitch type and aim, then <b>THROW PITCH</b> to the Sreniram batter.');
+      S.phase='pselect';
     }
     hud();
   }
+  function launchPitch(p,side,inZone,delay){
+    S.pitch=p;
+    var startX=plateX+(Math.random()*50-25);
+    S.ball={x:startX,sx:startX,y:horizonY,r:4,speed:p.speed*(0.92+Math.random()*0.16),
+            breakX:p.breakX*side,drop:p.drop,active:false,start:performance.now()+(delay||500),inZone:inZone,cpuSwing:false};
+  }
 
-  var fw=[];
-  function burst(){ fw=[]; for(var i=0;i<60;i++){fw.push({x:plateX,y:160,vx:(Math.random()-0.5)*10,vy:-Math.random()*9-2,life:70,c:Math.random()<0.5?'#C99700':'#D62828'});} }
-  function win(){ S.phase='won'; var w=document.getElementById('g-win'); w.hidden=false; w.scrollIntoView({behavior:'smooth',block:'center'}); }
+  // player throws (pitch phase)
+  function throwPitch(){
+    if(S.side!=='pitch'||S.phase!=='pselect') return;
+    var p=PITCHES[sel.type];
+    var aimX = sel.aim==='in'? -1 : sel.aim==='out'? 1 : 0;
+    var startX=plateX+aimX*38+(Math.random()*16-8);
+    var inZone = Math.abs((startX + p.breakX*(aimX>=0?1:-1)) - plateX) < sweetW+10;
+    S.pitch=p;
+    S.ball={x:startX,sx:startX,y:horizonY,r:4,speed:p.speed*(0.95+Math.random()*0.1),
+            breakX:p.breakX*(aimX>=0?1:-1),drop:p.drop,active:true,start:performance.now(),inZone:inZone,cpuSwing:false,cpuDone:false};
+    S.phase='pitching'; S.moundEmo='focus'; S.plateEmo='focus'; hud();
+  }
 
-  function loop(ts){
+  // ---------- batting input ----------
+  function swing(e){ if(e)e.preventDefault(); if(S.side!=='bat'||S.phase!=='pitching')return; S.swung=true; S.bat=0.0001; judgeBat(); }
+  function judgeBat(){
+    var b=S.ball, diff=b.y-contactY;
+    var q=Math.max(0,1-Math.abs(diff)/46)*Math.max(0,1-Math.abs(b.x-plateX)/sweetW);
+    if(q<0.16){ S.flash=6; sound('miss'); S.strikes++; emote('happy','sad'); resultBat('strike','❌ Swing and a miss — '+(diff<0?'early':'late')+' on the '+S.pitch.name.toLowerCase()+'!'); return; }
+    sound('crack'); S.flash=14; emote('shock','happy');
+    var angle=Math.max(4,Math.min(46,28-diff*0.55+(Math.random()*6-3)));
+    var ev=70+q*40, rad=angle*Math.PI/180, dist=(ev*ev*Math.sin(2*rad))/22;
+    S.dist=dist; hud();
+    var kind = (dist>=FENCE&&angle>=16&&angle<=42)?'HR':(dist>=235&&angle>10)?'XBH':(dist>=120&&angle<=30)?'SINGLE':(angle>42?'POP':'GROUND');
+    startFlight(angle,ev,dist,kind,true);
+  }
+
+  function startFlight(angle,ev,dist,kind,fromPlayer){
+    S.phase='flight';
+    var rad=angle*Math.PI/180, v=2.6+ev/30;
+    S.flight={x:plateX,y:contactY,vx:(Math.random()<0.5?-1:1)*Math.cos(rad)*v*0.6,vy:-Math.sin(rad)*v*2.4,g:0.052,kind:kind,dist:dist,t:0,landed:false,trail:[],fromPlayer:fromPlayer};
+  }
+  function finishFlight(){
+    var f=S.flight, p=f.fromPlayer;
+    if(f.kind==='HR'){
+      sound('cheer');
+      if(S.side==='bat'){ S.hr++; S.hits++; fwBurst(); emote('sad','happy',120); resultBat('hr','💥 <b>HOME RUN!</b> '+Math.round(f.dist)+' ft. The Mariners go yard!'); win(); return; }
+      else { emote('sad','happy',110); resultPitch('hrAgainst','💣 The Sreniram batter took you DEEP — '+Math.round(f.dist)+' ft. Shake it off and battle back.'); return; }
+    }
+    if(S.side==='bat'){
+      if(f.kind==='XBH'){S.hits++;emote('sad','happy');resultBat('hit','🔥 Extra-base hit! '+Math.round(f.dist)+' ft — so close to a homer.');}
+      else if(f.kind==='SINGLE'){S.hits++;emote('sad','happy');resultBat('hit','✅ Base hit! Now get under one for the homer.');}
+      else if(f.kind==='POP'){S.outs++;emote('happy','sad');resultBat('out','🟡 Pop-up — got under it.');}
+      else {S.outs++;emote('happy','sad');resultBat('out','🟡 Ground ball — a touch late.');}
+    } else {
+      // CPU batter put it in play vs you
+      if(f.kind==='XBH'||f.kind==='SINGLE'){emote('sad','happy');resultPitch('hitAgainst','🟠 Base hit against you. Mix your pitches and hit the corners.');}
+      else {S.outs++;emote('happy','sad');resultPitch('out','🟢 In play, OUT! Great pitch — '+S.outs+' down.');}
+    }
+  }
+
+  function resultBat(type,text){
+    msg(text); hud();
+    if(S.strikes>=3){S.strikes=0;S.balls=0;S.outs++;emote('happy','sad');msg(text+' &nbsp;<b>Strikeout!</b>');}
+    if(S.outs>=3){ flipToPitch(); return; }
+    if(type!=='strike'){S.balls=0;S.strikes=0;}
+    S.phase='cooldown'; setTimeout(function(){if(alive())pitchIn(type==='strike'?700:1100);}, type==='strike'?750:1150);
+    hud();
+  }
+  function resultPitch(type,text){
+    msg(text); hud();
+    if(S.outs>=3){ flipToBat(); return; }
+    S.phase='cooldown'; setTimeout(function(){if(alive())pitchIn(900);},1100);
+    hud();
+  }
+  function alive(){return S.phase!=='won';}
+
+  function flipToPitch(){
+    S.side='pitch'; S.outs=0; S.balls=0; S.strikes=0; S.inn=S.inn;
+    showControls(); hud();
+    emote('idle','idle',1);
+    msg('🧢 Three outs! Now <b>YOU PITCH</b> for the Mariners. Get the Sreniram batter out — pick a pitch and aim, then THROW.');
+    S.phase='cooldown'; setTimeout(function(){if(alive())pitchIn(600);},1400);
+  }
+  function flipToBat(){
+    S.side='bat'; S.outs=0; S.balls=0; S.strikes=0; S.inn++;
+    showControls(); hud();
+    msg('🔥 You retired the side! Back to <b>BATTING</b> — inning '+S.inn+'. Go hit a homer to win the deal!');
+    S.phase='cooldown'; setTimeout(function(){if(alive())pitchIn(900);},1400);
+  }
+
+  function win(){S.phase='won';var w=document.getElementById('g-win');w.hidden=false;w.scrollIntoView({behavior:'smooth',block:'center'});}
+  function fwBurst(){S.fw=[];for(var i=0;i<60;i++)S.fw.push({x:plateX,y:160,vx:(Math.random()-0.5)*10,vy:-Math.random()*9-2,life:70,c:Math.random()<0.5?'#C99700':'#D62828'});}
+
+  // ---------- main loop ----------
+  function loop(){
     raf=requestAnimationFrame(loop);
-    ctx.clearRect(0,0,W,H);
-    drawField();
+    ctx.clearRect(0,0,W,H); drawField();
+    if(S.emoT>0){S.emoT--; if(S.emoT===0){S.moundEmo='idle';S.plateEmo='idle';}}
 
     var b=S.ball;
+    // pitch travel (both phases)
     if(b && S.phase!=='flight' && S.phase!=='won'){
       if(!b.active && performance.now()>=b.start){ b.active=true; S.phase='pitching'; }
       if(b.active && S.phase==='pitching'){
         b.y+=b.speed;
         var t=(b.y-horizonY)/(contactY-horizonY);
-        b.x=b.sx + b.breakX*t*t + (b.inZone?0:(b.breakX>=0?14:-14));
-        b.y+=b.drop*t*t;                       // late drop
-        b.r=4+t*12;
-        if(b.y>contactY+26 && !S.swung){       // took the pitch
-          if(b.inZone && Math.abs(b.x-plateX)<sweetW){ S.strikes++; outcome('strike','👀 Called strike — that was in the zone. Be ready to pull the trigger.'); }
-          else { S.balls++; if(S.balls>=4){ S.balls=0; S.ab++; outcome('hit','🚶 Ball four — walk. Good eye! Next batter wants a homer.'); } else { outcome('strike-skip','Ball. Lay off the junk — wait for your pitch.'); S.phase='cooldown'; setTimeout(function(){if(S.phase!=='over'&&S.phase!=='won')pitchIn(450);},700); } }
+        b.x=b.sx+b.breakX*t*t+(b.inZone?0:(b.breakX>=0?14:-14));
+        b.y+=b.drop*t*t; b.r=4+t*12;
+
+        if(S.side==='pitch' && !b.cpuDone && b.y>contactY-30){
+          b.cpuDone=true; cpuDecide(b,t);
+        }
+        if(S.side==='bat' && b.y>contactY+26 && !S.swung){
+          if(b.inZone&&Math.abs(b.x-plateX)<sweetW){S.strikes++;emote('happy','sad');resultBat('strike','👀 Called strike — that was right there!');}
+          else {S.balls++; if(S.balls>=4){S.balls=0;emote('sad','happy');resultBat('hit','🚶 Ball four — walk! Good eye.');} else {msg('Ball. Wait for your pitch.');S.phase='cooldown';setTimeout(function(){if(alive())pitchIn(450);},700);} }
           b.active=false;
         }
       }
@@ -370,48 +401,55 @@
     }
 
     // flight
-    if(S.phase==='flight' && S.flight){
-      var f=S.flight; f.t++;
-      f.x+=f.vx; f.y+=f.vy; f.vy+=f.g;
-      f.trail.push({x:f.x,y:f.y}); if(f.trail.length>18)f.trail.shift();
-      // trail
+    if(S.phase==='flight'&&S.flight){
+      var f=S.flight; f.t++; f.x+=f.vx; f.y+=f.vy; f.vy+=f.g;
+      f.trail.push({x:f.x,y:f.y}); if(f.trail.length>16)f.trail.shift();
       for(var i=0;i<f.trail.length;i++){var tr=f.trail[i];ctx.globalAlpha=i/f.trail.length*0.5;drawBall(tr.x,tr.y,6,'#fff');}
       ctx.globalAlpha=1; drawBall(f.x,f.y,7,'#fff');
-      // live distance readout
-      S.dist=Math.max(S.dist, f.dist*Math.min(1,f.t/45));
-      document.getElementById('g-dist').textContent='Dist: '+Math.round(S.dist)+' ft';
-      if(!f.landed && (f.y>contactY+8 || f.x<6 || f.x>W-6 || f.t>120)){ f.landed=true; finishFlight(); }
+      S.dist=Math.max(S.dist,f.dist*Math.min(1,f.t/45)); document.getElementById('g-dist').textContent='Dist: '+Math.round(S.dist)+' ft';
+      if(!f.landed&&(f.y>contactY+8||f.x<6||f.x>W-6||f.t>120)){f.landed=true; finishFlight();}
     }
 
-    drawBat();
-
-    if(fw.length){ for(var k=0;k<fw.length;k++){var p=fw[k];p.x+=p.vx;p.y+=p.vy;p.vy+=0.28;p.life--;ctx.globalAlpha=Math.max(0,p.life/70);ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,4,4);}ctx.globalAlpha=1;fw=fw.filter(function(p){return p.life>0;});}
-    if(S.flash>0){ ctx.fillStyle='rgba(231,101,36,'+(S.flash/24)+')'; ctx.fillRect(0,0,W,H); S.flash--; }
+    drawCharacters(); drawBat();
+    if(S.fw.length){for(var k=0;k<S.fw.length;k++){var p=S.fw[k];p.x+=p.vx;p.y+=p.vy;p.vy+=0.28;p.life--;ctx.globalAlpha=Math.max(0,p.life/70);ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,4,4);}ctx.globalAlpha=1;S.fw=S.fw.filter(function(p){return p.life>0;});}
+    if(S.flash>0){ctx.fillStyle='rgba(231,101,36,'+(S.flash/24)+')';ctx.fillRect(0,0,W,H);S.flash--;}
   }
 
+  // CPU batter (when you pitch)
+  function cpuDecide(b,t){
+    var willSwing = b.inZone ? Math.random()<0.82 : Math.random()<0.32;
+    if(!willSwing){
+      if(b.inZone){S.strikes++; emote('happy','sad'); if(S.strikes>=3){S.strikes=0;S.balls=0;S.outs++;resultPitch('out','🟢 Caught looking — STRIKEOUT! '+S.outs+' down.');} else {msg('👀 Called strike on the Sreniram batter. ('+S.balls+'-'+S.strikes+')');S.phase='cooldown';setTimeout(function(){if(alive())pitchIn(700);},700);} }
+      else {S.balls++; emote('sad','happy'); if(S.balls>=4){S.balls=0;msg('🚶 Ball four — you walked the batter. Throw more strikes.');S.phase='cooldown';setTimeout(function(){if(alive())pitchIn(700);},800);} else {msg('Ball. ('+S.balls+'-'+S.strikes+')');S.phase='cooldown';setTimeout(function(){if(alive())pitchIn(600);},700);} }
+      b.active=false; hud(); return;
+    }
+    // CPU swings
+    var skill=0.5+Math.random()*0.45;
+    var hardness = (sel.type==='change'||sel.type==='curve')?0.85:1.0;     // off-speed fools CPU
+    var zonePen = b.inZone?1:0.6;
+    var q=skill*hardness*zonePen;
+    sound('crack'); S.flash=12;
+    if(q<0.45){ S.strikes++; sound('miss'); emote('happy','sad'); if(S.strikes>=3){S.strikes=0;S.balls=0;S.outs++;resultPitch('out','🟢 Swing and a miss — STRIKEOUT! '+S.outs+' down.');} else {msg('💨 Sreniram batter whiffs! ('+S.balls+'-'+S.strikes+')');S.phase='cooldown';setTimeout(function(){if(alive())pitchIn(700);},700);} b.active=false; hud(); return; }
+    var angle=Math.max(5,Math.min(45,20+ (Math.random()*30-15)));
+    var ev=70+q*38, rad=angle*Math.PI/180, dist=(ev*ev*Math.sin(2*rad))/22;
+    var kind=(dist>=FENCE&&angle>=16&&angle<=42&&q>0.85)?'HR':(dist>=235)?'XBH':(dist>=120)?'SINGLE':(angle>42?'POP':'GROUND');
+    S.dist=dist; b.active=false; startFlight(angle,ev,dist,kind,false);
+  }
+
+  // ---------- drawing ----------
   function drawField(){
-    // sky/stadium
     ctx.fillStyle='#0c2f57'; ctx.fillRect(0,0,W,H);
-    // outfield grass
-    var g=ctx.createLinearGradient(0,horizonY,0,H);
-    g.addColorStop(0,'#16623a'); g.addColorStop(1,'#0e7a44');
-    ctx.fillStyle=g; ctx.beginPath(); ctx.moveTo(0,horizonY+30); ctx.lineTo(W,horizonY+30); ctx.lineTo(W,H); ctx.lineTo(0,H); ctx.closePath(); ctx.fill();
-    // fence arc
+    var g=ctx.createLinearGradient(0,horizonY,0,H); g.addColorStop(0,'#16623a'); g.addColorStop(1,'#0e7a44');
+    ctx.fillStyle=g; ctx.fillRect(0,horizonY+30,W,H);
     ctx.strokeStyle='#0a3a22'; ctx.lineWidth=10; ctx.beginPath(); ctx.arc(plateX,H+40,W*0.52,Math.PI*1.18,Math.PI*1.82); ctx.stroke();
-    ctx.fillStyle='rgba(201,151,0,.85)'; ctx.font='700 12px Barlow Condensed, sans-serif'; ctx.textAlign='center';
-    ctx.fillText(FENCE_FT+' FT',plateX,horizonY+44);
-    // base dirt + plate
+    ctx.fillStyle='rgba(201,151,0,.85)'; ctx.font='700 12px Barlow Condensed,sans-serif'; ctx.textAlign='center'; ctx.fillText(FENCE+' FT',plateX,horizonY+44);
     ctx.fillStyle='#b06a2c'; ctx.beginPath(); ctx.ellipse(plateX,contactY+34,150,46,0,0,7); ctx.fill();
-    ctx.fillStyle='#FAF7F0'; ctx.beginPath();
-    ctx.moveTo(plateX-22,contactY+30);ctx.lineTo(plateX+22,contactY+30);ctx.lineTo(plateX+22,contactY+42);ctx.lineTo(plateX,contactY+52);ctx.lineTo(plateX-22,contactY+42);ctx.closePath();ctx.fill();
-    // contact zone
+    ctx.fillStyle='#FAF7F0'; ctx.beginPath(); ctx.moveTo(plateX-22,contactY+30);ctx.lineTo(plateX+22,contactY+30);ctx.lineTo(plateX+22,contactY+42);ctx.lineTo(plateX,contactY+52);ctx.lineTo(plateX-22,contactY+42);ctx.closePath(); ctx.fill();
     ctx.fillStyle='rgba(201,151,0,.20)'; ctx.fillRect(plateX-sweetW,contactY-16,sweetW*2,32);
     ctx.strokeStyle='rgba(201,151,0,.85)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(plateX-sweetW,contactY);ctx.lineTo(plateX+sweetW,contactY);ctx.stroke();
-    ctx.fillStyle='rgba(201,151,0,.9)'; ctx.font='700 11px Barlow Condensed, sans-serif'; ctx.fillText('CONTACT ZONE',plateX,contactY-22);
-    // pitcher mound
+    ctx.fillStyle='rgba(201,151,0,.9)'; ctx.font='700 11px Barlow Condensed,sans-serif'; ctx.fillText('CONTACT ZONE',plateX,contactY-22);
     ctx.fillStyle='#b06a2c'; ctx.beginPath(); ctx.ellipse(plateX,horizonY+34,34,12,0,0,7); ctx.fill();
   }
-
   function drawBall(x,y,r,color){
     ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fillStyle=color; ctx.fill();
     ctx.strokeStyle='#D62828'; ctx.lineWidth=Math.max(1,r*0.16);
@@ -419,24 +457,105 @@
     ctx.beginPath(); ctx.arc(x+r*0.45,y,r*0.95,Math.PI-0.6,Math.PI+0.6); ctx.stroke();
   }
 
-  function drawBat(){
-    var bx=plateX+30, by=contactY+18;
-    var ang;
-    if(S.swung && S.bat<1){ S.bat+=0.16; ang=-0.9 + S.bat*2.0; }
-    else if(S.swung){ ang=1.1; }
-    else { ang=-0.9 + Math.sin(performance.now()/260)*0.05; }
-    ctx.save(); ctx.translate(bx,by); ctx.rotate(ang);
-    ctx.strokeStyle='#caa15a'; ctx.lineWidth=7; ctx.lineCap='round';
-    ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-78); ctx.stroke();
-    ctx.strokeStyle='#3a2a12'; ctx.lineWidth=9; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-16); ctx.stroke();
+  // expressive cartoon face
+  function face(cx,cy,r,emo){
+    ctx.save();
+    // eyes
+    var ex=r*0.42, ey=-r*0.12, er=r*0.30;
+    ['L','R'].forEach(function(s){
+      var sx=cx+(s==='L'?-ex:ex);
+      ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(sx,cy+ey, emo==='shock'?er*1.25:er,0,7); ctx.fill();
+      ctx.fillStyle='#111';
+      var px=sx+(emo==='focus'?r*0.06:0), py=cy+ey+(emo==='sad'?er*0.3:0);
+      ctx.beginPath(); ctx.arc(px,py, emo==='focus'?er*0.35:er*0.5,0,7); ctx.fill();
+      // brows
+      ctx.strokeStyle='#111'; ctx.lineWidth=r*0.12; ctx.beginPath();
+      if(emo==='angry'){ ctx.moveTo(sx-er,cy+ey-er*1.1); ctx.lineTo(sx+er,cy+ey-er*0.5); }
+      else if(emo==='sad'){ ctx.moveTo(sx-er,cy+ey-er*0.5); ctx.lineTo(sx+er,cy+ey-er*1.1); }
+      else { ctx.moveTo(sx-er,cy+ey-er*0.9); ctx.lineTo(sx+er,cy+ey-er*0.9); }
+      ctx.stroke();
+    });
+    // mouth
+    ctx.lineWidth=r*0.12; ctx.strokeStyle='#7a2b2b'; ctx.fillStyle='#a23'; var my=cy+r*0.45;
+    ctx.beginPath();
+    if(emo==='happy'){ ctx.fillStyle='#922'; ctx.arc(cx,my,r*0.42,0.05*Math.PI,0.95*Math.PI); ctx.fill(); }
+    else if(emo==='shock'){ ctx.fillStyle='#922'; ctx.ellipse(cx,my+r*0.1,r*0.26,r*0.34,0,0,7); ctx.fill(); }
+    else if(emo==='sad'){ ctx.arc(cx,my+r*0.5,r*0.4,1.15*Math.PI,1.85*Math.PI); ctx.stroke(); }
+    else if(emo==='angry'){ ctx.moveTo(cx-r*0.35,my+r*0.1); ctx.lineTo(cx+r*0.35,my+r*0.1); ctx.stroke(); }
+    else { ctx.arc(cx,my,r*0.3,0.15*Math.PI,0.85*Math.PI); ctx.stroke(); }
+    if(emo==='sad'){ ctx.fillStyle='rgba(120,190,255,.9)'; ctx.beginPath(); ctx.arc(cx+r*0.5,cy,r*0.12,0,7); ctx.fill(); } // sweat
     ctx.restore();
-    if(S.swung && S.bat>=1 && S.flash>6){ ctx.fillStyle='rgba(255,255,255,.85)'; ctx.beginPath(); ctx.arc(plateX,contactY,10,0,7); ctx.fill(); }
   }
 
+  // Mariner: human in a fish suit (teal), holding bat when at plate
+  function drawMariner(x,y,emo,role){
+    ctx.save();
+    // fish-suit body
+    ctx.fillStyle='#0C5C5C'; ctx.beginPath(); ctx.ellipse(x,y,34,46,0,0,7); ctx.fill();
+    ctx.fillStyle='#0a4747'; ctx.beginPath(); ctx.moveTo(x-30,y); ctx.lineTo(x-58,y-22); ctx.lineTo(x-58,y+22); ctx.closePath(); ctx.fill(); // tail
+    ctx.fillStyle='#11807f'; ctx.beginPath(); ctx.moveTo(x,y-46); ctx.lineTo(x-12,y-66); ctx.lineTo(x+12,y-60); ctx.closePath(); ctx.fill(); // dorsal fin
+    // costume fish eyes (big, on hood)
+    ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(x-16,y-30,9,0,7); ctx.arc(x+16,y-30,9,0,7); ctx.fill();
+    ctx.fillStyle='#111'; ctx.beginPath(); ctx.arc(x-16,y-30,4,0,7); ctx.arc(x+16,y-30,4,0,7); ctx.fill();
+    // human face inside the suit opening
+    ctx.fillStyle='#f1c8a0'; ctx.beginPath(); ctx.arc(x,y+4,20,0,7); ctx.fill();
+    face(x,y+4,20,emo);
+    // jersey label
+    ctx.fillStyle='#fff'; ctx.font='700 9px Barlow Condensed,sans-serif'; ctx.textAlign='center'; ctx.fillText('MARINERS',x,y+34);
+    ctx.restore();
+  }
+
+  // Sreniram: a fish dressed as a human (cap + jersey + legs)
+  function drawSreniram(x,y,emo,role){
+    ctx.save();
+    // legs/pants
+    ctx.fillStyle='#3a3f55'; ctx.fillRect(x-14,y+30,10,26); ctx.fillRect(x+4,y+30,10,26);
+    ctx.fillStyle='#111'; ctx.fillRect(x-16,y+54,14,7); ctx.fillRect(x+2,y+54,14,7);
+    // fish body (upright) wearing jersey
+    ctx.fillStyle='#D85a2a'; ctx.beginPath(); ctx.ellipse(x,y+6,30,40,0,0,7); ctx.fill();
+    ctx.fillStyle='#c14f22'; ctx.beginPath(); ctx.moveTo(x,y+44); ctx.lineTo(x-16,y+64); ctx.lineTo(x+16,y+64); ctx.closePath(); ctx.fill(); // tail fin bottom
+    // fin arms
+    ctx.fillStyle='#c14f22'; ctx.beginPath(); ctx.ellipse(x-30,y+6,10,18,0.5,0,7); ctx.fill(); ctx.beginPath(); ctx.ellipse(x+30,y+6,10,18,-0.5,0,7); ctx.fill();
+    // jersey stripe
+    ctx.fillStyle='#fff'; ctx.fillRect(x-30,y+18,60,8);
+    // fish face with emotion
+    face(x,y-6,19,emo);
+    // human cap
+    ctx.fillStyle='#D62828'; ctx.beginPath(); ctx.arc(x,y-22,20,Math.PI,2*Math.PI); ctx.fill(); ctx.fillRect(x,y-24,26,5);
+    ctx.fillStyle='#fff'; ctx.font='700 9px Barlow Condensed,sans-serif'; ctx.textAlign='center'; ctx.fillText('SRENIRAM',x,y+30);
+    ctx.restore();
+  }
+
+  function drawCharacters(){
+    // mound character (top) and plate character (bottom-left of plate)
+    var moundIsMariner = S.side==='pitch';
+    var mx=plateX, my=horizonY+18;
+    var px=plateX-86, py=contactY-2;
+    if(moundIsMariner){ drawMariner(mx,my,S.moundEmo,'pitch'); drawSreniram(px,py,S.plateEmo,'bat'); }
+    else { drawSreniram(mx,my,S.moundEmo,'pitch'); drawMariner(px,py,S.plateEmo,'bat'); }
+  }
+
+  function drawBat(){
+    if(S.side!=='bat') return;
+    var bx=plateX-58, by=contactY-4, ang;
+    if(S.swung&&S.bat<1){S.bat+=0.18; ang=-0.9+S.bat*2.0;}
+    else if(S.swung){ang=1.1;}
+    else {ang=-0.9+Math.sin(performance.now()/260)*0.05;}
+    ctx.save(); ctx.translate(bx,by); ctx.rotate(ang);
+    ctx.strokeStyle='#caa15a'; ctx.lineWidth=7; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(40,-64); ctx.stroke();
+    ctx.restore();
+    if(S.swung&&S.bat>=1&&S.flash>6){ctx.fillStyle='rgba(255,255,255,.85)';ctx.beginPath();ctx.arc(plateX,contactY,10,0,7);ctx.fill();}
+  }
+
+  // ---------- controls ----------
   document.getElementById('g-swing').addEventListener('click',swing);
-  cv.addEventListener('pointerdown',swing);
-  document.addEventListener('keydown',function(e){ if(e.code==='Space' && document.getElementById('hr-game')) swing(e); });
+  cv.addEventListener('pointerdown',function(e){ if(S.side==='bat') swing(e); });
+  document.addEventListener('keydown',function(e){ if(e.code==='Space'&&document.getElementById('hr-game')){ if(S.side==='bat')swing(e); else if(S.phase==='pselect'){e.preventDefault();throwPitch();} } });
   document.getElementById('g-reset').addEventListener('click',reset);
+  document.getElementById('g-reset2').addEventListener('click',reset);
+  document.getElementById('g-throw').addEventListener('click',throwPitch);
+  document.querySelectorAll('[data-ptype]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('[data-ptype]').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');sel.type=b.getAttribute('data-ptype');});});
+  document.querySelectorAll('[data-aim]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('[data-aim]').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');sel.aim=b.getAttribute('data-aim');});});
   reset();
 })();
 </script>
