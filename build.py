@@ -72,6 +72,7 @@ NAV = """<a class="skip" href="#main">Skip to content</a>
           <a href="batting-cages.html">Batting Cages Near Chino Hills</a>
           <a href="baseball-tryouts.html">Baseball Tryouts</a>
           <a href="baseball-tryouts.html#clubs">AA &amp; AAA Clubs</a>
+          <a href="rankings.html">🏆 Player Rankings &amp; The Climb</a>
         </div>
       </div>
       <div class="nav__item">
@@ -123,7 +124,7 @@ NAV = """<a class="skip" href="#main">Skip to content</a>
     </div>
     <button class="acc__head" aria-expanded="false">Find <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
     <div class="acc__panel" data-open="false">
-      <a href="chino-hills-baseball-lessons.html">Baseball Lessons in Chino Hills</a><a href="coaches.html">Baseball Coaches</a><a href="coaches.html?type=hitting">Hitting Coaches</a><a href="coaches.html?type=pitching">Pitching Coaches</a><a href="batting-cages.html">Batting Cages Near Chino Hills</a><a href="baseball-tryouts.html">Baseball Tryouts</a><a href="baseball-tryouts.html#clubs">AA &amp; AAA Clubs</a>
+      <a href="chino-hills-baseball-lessons.html">Baseball Lessons in Chino Hills</a><a href="coaches.html">Baseball Coaches</a><a href="coaches.html?type=hitting">Hitting Coaches</a><a href="coaches.html?type=pitching">Pitching Coaches</a><a href="batting-cages.html">Batting Cages Near Chino Hills</a><a href="baseball-tryouts.html">Baseball Tryouts</a><a href="baseball-tryouts.html#clubs">AA &amp; AAA Clubs</a><a href="rankings.html">Player Rankings &amp; The Climb</a>
     </div>
     <button class="acc__head" aria-expanded="false">For Coaches <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
     <div class="acc__panel" data-open="false">
@@ -166,7 +167,7 @@ FOOTER = """<div class="seam seam--gold" aria-hidden="true"></div>
       </div>
       <div>
         <h4>Find Baseball Help</h4>
-        <a href="coaches.html">Baseball Coach Directory</a><a href="batting-cages.html">Batting Cage Directory</a><a href="baseball-tryouts.html?div=aa">AA Baseball Tryouts</a><a href="baseball-tryouts.html?div=aaa">AAA Baseball Tryouts</a><a href="10-session-course.html">10-Session Coaching Course</a>
+        <a href="coaches.html">Baseball Coach Directory</a><a href="batting-cages.html">Batting Cage Directory</a><a href="baseball-tryouts.html?div=aa">AA Baseball Tryouts</a><a href="baseball-tryouts.html?div=aaa">AAA Baseball Tryouts</a><a href="rankings.html">Player Rankings &amp; The Climb</a><a href="10-session-course.html">10-Session Coaching Course</a>
       </div>
       <div>
         <h4>For Coaches &amp; Facilities</h4>
@@ -258,6 +259,9 @@ PAGES = {
  "play": dict(
     title="Home-Run Timing Game | Hit a Homer, Unlock the 30-Day Deal",
     desc="Play the Kemuel Swing Academy home-run timing game. Time your swing, hit a home run, and unlock the 30-day training program for $19.99 plus a free coach session."),
+ "rankings": dict(
+    title="Kemuel Player Rankings & The Climb | Youth Baseball Leaderboard",
+    desc="Get your player on the Kemuel Player Rankings. Climb from rec ball to travel, AA, AAA, and beyond. Discipline-score leaderboard, shareable player cards, and a monthly Hall of Fame."),
 }
 
 def build():

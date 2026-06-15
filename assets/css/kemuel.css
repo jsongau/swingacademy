@@ -481,6 +481,38 @@ p { margin: 0 0 1rem; }
 .review p{ font-size:1.02rem; color:#36414f; }
 .review__by{ font-family:var(--font-head); font-weight:600; color:var(--navy); }
 
+/* Leaderboard rank cells */
+.rank{ font-family:var(--font-display); font-size:1.2rem; color:var(--steel); width:54px; text-align:center; }
+.rank--1{ color:var(--gold); } .rank--2{ color:#9aa7b6; } .rank--3{ color:#c08457; }
+.tbl .player{ font-family:var(--font-head); font-weight:600; color:var(--navy); }
+.tier{ font-family:var(--font-head); font-weight:700; font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; padding:.2rem .55rem; border-radius:999px; }
+.tier--elite{ background:linear-gradient(135deg,var(--gold),var(--orange)); color:var(--navy); }
+.tier--cand{ background:#FBEFCB; color:#8a6a00; }
+.tier--strong{ background:#E7F4EC; color:var(--success); }
+
+/* Player card */
+.pcard{ width:300px; max-width:100%; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-lg);
+  background:linear-gradient(160deg,#0a2647,#071E3D); color:#fff; border:2px solid var(--gold); }
+.pcard__top{ display:flex; align-items:center; gap:12px; padding:16px 18px; border-bottom:1px solid rgba(255,255,255,.12); }
+.pcard__av{ width:54px;height:54px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-size:1.5rem;color:var(--navy);flex:0 0 auto; }
+.pcard__name{ font-family:var(--font-head); font-weight:700; font-size:1.25rem; line-height:1; }
+.pcard__meta{ color:#9FB3CC; font-size:.82rem; }
+.pcard__body{ padding:16px 18px; }
+.pcard__stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; text-align:center; }
+.pcard__stat .n{ font-family:var(--font-display); font-size:1.5rem; color:var(--gold); }
+.pcard__stat .l{ font-family:var(--font-head); font-size:.6rem; text-transform:uppercase; letter-spacing:.08em; color:#9FB3CC; }
+.pcard__foot{ display:flex; align-items:center; justify-content:space-between; padding:12px 18px; background:rgba(255,255,255,.05); font-family:var(--font-head); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:#9FB3CC; }
+
+/* The Climb ladder */
+.climb{ display:grid; gap:10px; }
+.rung{ display:flex; align-items:center; gap:16px; background:#fff; border:1px solid var(--line); border-left:6px solid var(--steel-200); border-radius:var(--r-md); padding:16px 18px; }
+.rung b{ font-family:var(--font-head); font-size:1.2rem; color:var(--navy); }
+.rung small{ color:var(--steel); }
+.rung__no{ font-family:var(--font-display); font-size:1.5rem; color:var(--steel); width:38px; text-align:center; flex:0 0 auto; }
+.rung--here{ border-left-color:var(--gold); box-shadow:inset 0 0 0 2px var(--gold), var(--shadow-sm); background:#FFFBF0; }
+.rung--here .rung__no{ color:var(--gold); }
+.rung--top{ border-left-color:var(--red); }
+
 /* Breadcrumb */
 .crumb{ font-size:.85rem; color:var(--steel); padding:14px 0 0; }
 .crumb a:hover{ color:var(--red); }
