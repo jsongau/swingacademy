@@ -214,7 +214,7 @@ p { margin: 0 0 1rem; }
 .nav__menu { display:none; }   /* hidden on mobile, flex on desktop */
 .nav__cta  { display:none; gap:10px; }
 
-.nav__item { position: relative; }
+.nav__item { position: relative; flex: 0 0 auto; }
 .nav__link {
   display:inline-flex; align-items:center; gap:.3rem; white-space:nowrap;
   font-family: var(--font-head); font-weight:600; text-transform:uppercase; letter-spacing:.03em;
@@ -340,7 +340,8 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Desktop nav switch ---------- */
 @media (min-width: 1024px) {
-  .nav__menu { display:flex; align-items:center; gap: 18px; }
+  .nav__menu { display:flex; flex-wrap:nowrap; align-items:center; gap: 16px; }
+  .nav__link { white-space:nowrap; }
   .nav__cta  { display:flex; }
   .nav__toggle { display:none; }
   .drawer { display:none; }
