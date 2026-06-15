@@ -1,0 +1,76 @@
+<div class="wrap crumb"><a href="index.html">Home</a> › Find › Baseball Coaches</div>
+
+<section class="hero">
+  <div class="wrap" style="padding:clamp(36px,6vw,60px) 0">
+    <div data-reveal style="max-width:64ch">
+      <span class="eyebrow" style="color:var(--gold-soft)">Baseball Coach Directory</span>
+      <h1 class="display">Find baseball coaches in Chino Hills &amp; Southern California</h1>
+      <p class="hero__lead">Hitting, pitching, catching, fielding, strength, and tryout-prep coaches. Filter by location, position, age group, and budget — then match with the right coach for your player's next 30 days.</p>
+      <div class="hero__cta"><a href="#match" class="btn btn--primary btn--lg">Start the Coach Match Quiz</a><a href="coach-claim.html" class="btn btn--ghost-light">Are You a Coach? Claim Your Profile</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS + LISTINGS -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="filters" data-reveal>
+      <input type="text" placeholder="City or ZIP (e.g. Chino Hills, 91709)" style="flex:1;min-width:180px">
+      <select><option>All positions</option><option>Hitting</option><option>Pitching</option><option>Catching</option><option>Fielding</option><option>Strength &amp; speed</option></select>
+      <select><option>Any age</option><option>6–8</option><option>9–11</option><option>12–14</option><option>15+</option></select>
+      <select><option>Any budget</option><option>Under $50</option><option>$50–$75</option><option>$75–$100</option><option>$100+</option></select>
+      <button class="chip" data-chip-toggle aria-pressed="false">Private</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Group</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Tryout prep</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Weekends</button>
+      <a class="btn btn--navy btn--sm" href="#listings">Search</a>
+    </div>
+
+    <div id="listings" class="grid g-3 mt-3">
+      <!-- Featured -->
+      <div class="card card--feature card--hover" data-reveal><div class="card__top"><span class="badge badge--featured badge--dot">Featured Coach</span><span class="note">Chino Hills</span></div><div class="card__body"><h3 class="card__title">Hitting Specialist</h3><p class="text-muted">8 yrs · former college player. Bat control, contact, and confidence for ages 9–14.</p><div class="pill-row"><span class="chip">Hitting</span><span class="chip">10-session</span><span class="chip">Tryout prep</span></div><p class="note mt-1">Best for: contact hitters &amp; players needing structure.</p></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm">Book Lesson</a><a class="btn btn--ghost btn--sm">Profile</a></div></div>
+      <!-- Verified -->
+      <div class="card card--hover" data-reveal><div class="card__top"><span class="badge badge--verified badge--dot">Verified Coach</span><span class="note">Chino / Diamond Bar</span></div><div class="card__body"><h3 class="card__title">Pitching Coach</h3><p class="text-muted">Mechanics, arm care, command. Travel-ball experience.</p><div class="pill-row"><span class="chip">Pitching</span><span class="chip">Private</span></div><p class="note mt-1">Best for: pitchers building command.</p></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm">Book Lesson</a><a class="btn btn--ghost btn--sm">Profile</a></div></div>
+      <!-- Public -->
+      <div class="card card--hover" data-reveal><div class="card__top"><span class="badge badge--public badge--dot">Public Listing</span><span class="note">Walnut</span></div><div class="card__body"><h3 class="card__title">Catching &amp; Fielding</h3><p class="text-muted">Based on publicly available information — appears to offer youth fielding instruction in the area.</p><div class="pill-row"><span class="chip">Catching</span><span class="chip">Fielding</span></div></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--ghost btn--sm">View Profile</a><a class="btn btn--gold btn--sm" href="coach-claim.html">Claim</a></div></div>
+      <div class="card card--hover" data-reveal><div class="card__top"><span class="badge badge--verified badge--dot">Verified Coach</span><span class="note">Rancho Cucamonga</span></div><div class="card__body"><h3 class="card__title">Strength &amp; Speed</h3><p class="text-muted">Plyometrics, rotational power, sprint mechanics for explosive hitters.</p><div class="pill-row"><span class="chip">Strength</span><span class="chip">Speed</span></div></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm">Book Lesson</a><a class="btn btn--ghost btn--sm">Profile</a></div></div>
+      <div class="card card--hover" data-reveal><div class="card__top"><span class="badge badge--public badge--dot">Public Listing</span><span class="note">Yorba Linda</span></div><div class="card__body"><h3 class="card__title">Travel Ball Coach</h3><p class="text-muted">Youth development and tryout preparation for competitive teams.</p><div class="pill-row"><span class="chip">Tryout prep</span><span class="chip">Youth dev</span></div></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--ghost btn--sm">View Profile</a><a class="btn btn--gold btn--sm" href="coach-claim.html">Claim</a></div></div>
+      <div class="card card--hover" data-reveal><div class="card__top"><span class="badge badge--featured badge--dot">Featured Coach</span><span class="note">Corona</span></div><div class="card__body"><h3 class="card__title">Hitting &amp; Tryout Prep</h3><p class="text-muted">10-session development plan with final evaluation and report.</p><div class="pill-row"><span class="chip">Hitting</span><span class="chip">10-session</span></div></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm">Book Lesson</a><a class="btn btn--ghost btn--sm">Profile</a></div></div>
+    </div>
+    <p class="note mt-2">Listing labels: <strong>Public Listing</strong> — based on publicly available information, not yet claimed. <strong>Verified</strong> — coach claimed the profile. <strong>Featured</strong> — paid/partner placement. Public listings are not endorsements.</p>
+  </div>
+</section>
+
+<!-- COACH MATCH QUIZ -->
+<section class="section" id="match">
+  <div class="wrap" style="max-width:760px">
+    <div class="center" data-reveal><span class="eyebrow shead--center">Coach Matching</span><h2>Find the right coach in under a minute</h2></div>
+    <div class="quiz mt-3" data-reveal>
+      <div class="quiz__bar"><i style="width:20%"></i></div>
+      <p class="note">Step 1 of 5 · Player goal</p>
+      <h3>What does your player want to improve?</h3>
+      <div class="quiz__opts mt-1">
+        <button class="quiz__opt">⚾ Hit harder</button>
+        <button class="quiz__opt">🎯 Make more contact</button>
+        <button class="quiz__opt">🔥 Improve pitching</button>
+        <button class="quiz__opt">🧤 Improve catching</button>
+        <button class="quiz__opt">🏆 Prepare for tryouts</button>
+        <button class="quiz__opt">💪 Build strength &amp; speed</button>
+        <button class="quiz__opt">😎 Build confidence</button>
+        <button class="quiz__opt">📋 Full development plan</button>
+      </div>
+      <p class="note mt-2">Next steps ask for age, position, city/ZIP, training preference, and budget — then we show matching coach cards above.</p>
+      <a href="10-session-course.html" class="btn btn--gold mt-1">Or explore the 10-session course</a>
+    </div>
+  </div>
+</section>
+
+<!-- COACH CTA -->
+<section class="section section--navy">
+  <div class="wrap center" data-reveal>
+    <span class="eyebrow shead--center" style="color:var(--gold-soft)">For Coaches</span>
+    <h2 class="text-white">Get more baseball players without chasing parents on Instagram</h2>
+    <p class="lead shead shead--center" style="color:#C6D4E6">Claim your profile, list private lessons, sell a 10-session course, and receive booking requests from serious local families.</p>
+    <div class="hero__cta" style="justify-content:center"><a href="coach-claim.html" class="btn btn--gold btn--lg">Claim Your Coach Profile</a><a href="10-session-course.html" class="btn btn--ghost-light btn--lg">Create a 10-Session Course</a></div>
+  </div>
+</section>

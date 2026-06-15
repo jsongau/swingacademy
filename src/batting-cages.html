@@ -1,0 +1,79 @@
+<div class="wrap crumb"><a href="index.html">Home</a> › Find › Batting Cages</div>
+
+<section class="hero">
+  <div class="wrap" style="padding:clamp(36px,6vw,60px) 0">
+    <div data-reveal style="max-width:64ch">
+      <span class="eyebrow" style="color:var(--gold-soft)">SoCal Batting Cage Directory</span>
+      <h1 class="display">Batting cages near Chino Hills</h1>
+      <p class="hero__lead">Find batting cages, indoor training centers, pitching tunnels, and baseball facilities across Southern California. Find a cage, complete a session, and add it to your 30-day journey.</p>
+      <div class="hero__cta"><a href="#listings" class="btn btn--primary btn--lg">Browse Cages</a><a href="#list" class="btn btn--gold btn--lg">List Your Facility</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="filters" data-reveal>
+      <input type="text" placeholder="City or ZIP" style="flex:1;min-width:160px">
+      <button class="chip" data-chip-toggle aria-pressed="false">Indoor</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Outdoor</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Pitching machine</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Pitching tunnels</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Lessons</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Open weekends</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Team rentals</button>
+      <a class="btn btn--navy btn--sm" href="#listings">Search</a>
+    </div>
+
+    <div class="grid g-2 mt-3" style="align-items:start">
+      <div class="mapbox" data-reveal style="min-height:300px">
+        <span class="pin" style="left:30%;top:35%"></span><span class="pin" style="left:55%;top:50%"></span><span class="pin" style="left:70%;top:30%"></span><span class="pin" style="left:45%;top:68%"></span>
+        <span style="position:relative">Chino Hills &amp; nearby cages</span>
+      </div>
+      <div id="listings" class="stack-sm" data-reveal>
+        <div class="card"><div class="card__body" style="padding:18px"><div class="flex items-center" style="justify-content:space-between"><h3 style="margin:0;font-size:1.2rem">Indoor Training Center · Chino Hills</h3><span class="badge badge--public">Public Listing</span></div><p class="text-muted" style="margin:.4rem 0">Indoor · Pitching machine · Lessons · Open weekends.</p><div class="pill-row"><a class="btn btn--orange btn--sm">Log Session</a><a class="btn btn--ghost btn--sm">Claim Facility</a></div></div></div>
+        <div class="card"><div class="card__body" style="padding:18px"><div class="flex items-center" style="justify-content:space-between"><h3 style="margin:0;font-size:1.2rem">Baseball Cages · Chino</h3><span class="badge badge--featured">Featured</span></div><p class="text-muted" style="margin:.4rem 0">Outdoor · Baseball &amp; softball · Team rentals · Tryout hosting.</p><div class="pill-row"><a class="btn btn--orange btn--sm">Log Session</a><a class="btn btn--ghost btn--sm">View</a></div></div></div>
+        <div class="card"><div class="card__body" style="padding:18px"><div class="flex items-center" style="justify-content:space-between"><h3 style="margin:0;font-size:1.2rem">Pitching Tunnels · Diamond Bar</h3><span class="badge badge--public">Public Listing</span></div><p class="text-muted" style="margin:.4rem 0">Indoor tunnels · Machine speeds to 70 mph · Memberships.</p><div class="pill-row"><a class="btn btn--orange btn--sm">Log Session</a><a class="btn btn--ghost btn--sm">Claim Facility</a></div></div></div>
+      </div>
+    </div>
+    <p class="note mt-2">Public listings are based on publicly available information and are not endorsements unless the facility claims and verifies the profile.</p>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Regions We Cover</span>
+    <h2 data-reveal>Southern California batting cages</h2>
+    <div class="grid g-4 mt-3" data-reveal>
+      <div class="card"><div class="card__body"><h3 class="card__title">Chino Hills &amp; Nearby</h3><p class="text-muted mb-0">Chino Hills, Chino, Diamond Bar, Pomona, Ontario, Rancho Cucamonga, Walnut, Yorba Linda, Rowland Heights, Corona.</p></div></div>
+      <div class="card"><div class="card__body"><h3 class="card__title">Orange County</h3><p class="text-muted mb-0">Anaheim, Irvine, Huntington Beach, Fountain Valley, Costa Mesa, Fullerton, Garden Grove, Mission Viejo, Santa Ana.</p></div></div>
+      <div class="card"><div class="card__body"><h3 class="card__title">Inland Empire</h3><p class="text-muted mb-0">Ontario, Rancho Cucamonga, Riverside, Corona, Fontana, Upland, Pomona, Redlands.</p></div></div>
+      <div class="card"><div class="card__body"><h3 class="card__title">LA &amp; San Diego</h3><p class="text-muted mb-0">Los Angeles, Pasadena, Long Beach, Torrance, Whittier, West Covina · San Diego, Oceanside, Escondido, Chula Vista, Carlsbad.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY OWNER CTA -->
+<section class="section section--navy" id="list">
+  <div class="wrap hero__grid" style="padding:0;align-items:center">
+    <div data-reveal id="claim">
+      <span class="eyebrow" style="color:var(--gold-soft)">Own a Batting Cage?</span>
+      <h2 class="text-white">Reach baseball families looking for practice space</h2>
+      <p style="color:#C6D4E6">List your facility to attract cage sessions, lessons, tryouts, team rentals, and challenge events from local families.</p>
+      <div class="grid g-2" style="gap:8px;margin-top:14px">
+        <span class="chip" style="background:rgba(255,255,255,.1);color:#fff" id="rentals">Team rentals</span>
+        <span class="chip" style="background:rgba(255,255,255,.1);color:#fff" id="events">Host challenge events</span>
+        <span class="chip" style="background:rgba(255,255,255,.1);color:#fff">Featured placement</span>
+        <span class="chip" style="background:rgba(255,255,255,.1);color:#fff">Lead generation</span>
+      </div>
+    </div>
+    <form class="form-card" data-reveal onsubmit="return false">
+      <div class="field"><label>Facility name</label><input type="text" placeholder="Business name"></div>
+      <div class="grid g-2"><div class="field"><label>City</label><input type="text" placeholder="Chino Hills"></div><div class="field"><label>Phone</label><input type="tel" placeholder="(909) 000-0000"></div></div>
+      <div class="grid g-2"><div class="field"><label>Indoor / Outdoor</label><select><option>Indoor</option><option>Outdoor</option><option>Both</option></select></div><div class="field"><label>Pitching machine?</label><select><option>Yes</option><option>No</option></select></div></div>
+      <div class="field"><label>Features</label><input type="text" placeholder="Tunnels, lessons, weekends, rentals, memberships"></div>
+      <button class="btn btn--gold btn--lg btn--block">List My Batting Cage</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<!--SCHEMA
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Baseball Tryouts in Southern California","description":"Find AA, AAA, and travel baseball tryouts near Chino Hills and across Southern California."}
+</script>
+SCHEMA-->
+
+<div class="wrap crumb"><a href="index.html">Home</a> › Tryouts</div>
+
+<section class="hero">
+  <div class="wrap" style="padding:clamp(36px,6vw,60px) 0">
+    <div data-reveal style="max-width:64ch">
+      <span class="eyebrow" style="color:var(--gold-soft)">AA · AAA · Travel Ball</span>
+      <h1 class="display">Baseball tryouts in Southern California</h1>
+      <p class="hero__lead">Discover local baseball clubs, AA and AAA teams, travel ball programs, and upcoming tryouts. Clubs can create tryout pages, collect signups, charge fees, and offer private coaching after the tryout.</p>
+      <div class="hero__cta"><a href="#listings" class="btn btn--primary btn--lg">Find Tryouts</a><a href="#create" class="btn btn--gold btn--lg">List Your Club</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="filters" data-reveal>
+      <input type="text" placeholder="City or ZIP" style="flex:1;min-width:160px">
+      <select><option>Any age group</option><option>8U</option><option>10U</option><option>12U</option><option>14U</option><option>High school prep</option></select>
+      <button class="chip" data-chip-toggle aria-pressed="false">AA</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">AAA</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Travel ball</button>
+      <button class="chip" data-chip-toggle aria-pressed="false">Tournament</button>
+      <a class="btn btn--navy btn--sm" href="#listings">Search</a>
+    </div>
+
+    <div id="listings" class="grid g-3 mt-3" data-reveal>
+      <div class="card card--hover" id="clubs"><div class="card__top"><span class="badge badge--new badge--dot">AAA Tryout</span><span class="note">Chino Hills</span></div><div class="card__body"><h3 class="card__title">12U AAA Club</h3><p class="text-muted">Positions needed: pitching, middle infield, catcher.</p><p class="note"><strong>Date:</strong> Sat · <strong>Fee:</strong> example · <strong>Location:</strong> Chino Hills</p></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm" href="#signup">Sign Up</a><a class="btn btn--ghost btn--sm">Details</a></div></div>
+      <div class="card card--hover"><div class="card__top"><span class="badge badge--new badge--dot">AA Tryout</span><span class="note">Diamond Bar</span></div><div class="card__body"><h3 class="card__title">10U AA Development</h3><p class="text-muted">Positions needed: outfield, utility.</p><p class="note"><strong>Date:</strong> Sun · <strong>Fee:</strong> example · <strong>Location:</strong> Diamond Bar</p></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm" href="#signup">Sign Up</a><a class="btn btn--ghost btn--sm">Details</a></div></div>
+      <div class="card card--hover"><div class="card__top"><span class="badge badge--new badge--dot">Travel Ball</span><span class="note">Corona</span></div><div class="card__body"><h3 class="card__title">14U Travel Team</h3><p class="text-muted">Positions needed: pitching depth, corner infield.</p><p class="note"><strong>Date:</strong> Sat · <strong>Fee:</strong> example · <strong>Location:</strong> Corona</p></div><div class="card__top" style="border-bottom:none;border-top:1px solid var(--line)"><a class="btn btn--primary btn--sm" href="#signup">Sign Up</a><a class="btn btn--ghost btn--sm">Details</a></div></div>
+    </div>
+    <p class="note mt-2">Tryout listings may be based on publicly available information and are not endorsements unless the club claims and verifies the page.</p>
+  </div>
+</section>
+
+<!-- SIGNUP FLOW -->
+<section class="section" id="signup">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>How Tryout Signup Works</span>
+    <h2 data-reveal>From signup to next step</h2>
+    <div class="steps mt-3" data-reveal>
+      <div class="step"><div><h3>Choose a tryout</h3><p class="text-muted">Filter by division, age group, and location.</p></div></div>
+      <div class="step"><div><h3>Enter player profile</h3><p class="text-muted">Name, age, position, team, and contact.</p></div></div>
+      <div class="step"><div><h3>Pay tryout fee (if applicable)</h3><p class="text-muted">Some clubs charge a tryout fee at signup.</p></div></div>
+      <div class="step"><div><h3>Coach completes evaluation</h3><p class="text-muted">A standard player evaluation after the tryout.</p></div></div>
+      <div class="step"><div><h3>Follow-up offer</h3><p class="text-muted">Team invitation, development team, 10-session course, or hitting / pitching / strength program.</p></div></div>
+    </div>
+    <div class="form-card mt-4" data-reveal style="max-width:680px">
+      <h3>Player evaluation / tryout signup</h3>
+      <div class="grid g-2"><div class="field"><label>Player name</label><input type="text"></div><div class="field"><label>Age</label><input type="number"></div></div>
+      <div class="grid g-2"><div class="field"><label>Primary position</label><input type="text" placeholder="e.g. SS"></div><div class="field"><label>Current team</label><input type="text"></div></div>
+      <div class="field"><label>Parent email</label><input type="email" placeholder="you@email.com"></div>
+      <button class="btn btn--primary btn--lg btn--block">Sign Up for Tryout</button>
+      <p class="note mt-2">We do not guarantee roster spots or tryout selection. Tryout outcomes are decided by each club.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLUB CTA -->
+<section class="section section--navy" id="create"><div class="wrap center" data-reveal>
+  <span class="eyebrow shead--center" style="color:var(--gold-soft)">For Baseball Clubs</span>
+  <h2 class="text-white">Fill your roster and build your pipeline</h2>
+  <p class="lead shead shead--center" style="color:#C6D4E6">Create a tryout page, collect signups, charge a tryout fee, and offer private coaching follow-ups.</p>
+  <a href="#create" class="btn btn--gold btn--lg">Create a Tryout Page</a>
+</div></section>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /foundation.html
+
+Sitemap: https://kemuelswingacademy.com/sitemap.xml
