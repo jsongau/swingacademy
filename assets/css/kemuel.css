@@ -216,9 +216,9 @@ p { margin: 0 0 1rem; }
 
 .nav__item { position: relative; }
 .nav__link {
-  display:inline-flex; align-items:center; gap:.35rem;
-  font-family: var(--font-head); font-weight:600; text-transform:uppercase; letter-spacing:.04em;
-  font-size:1rem; color:#E8EEF6; padding: .6rem .2rem; height: var(--nav-h);
+  display:inline-flex; align-items:center; gap:.3rem; white-space:nowrap;
+  font-family: var(--font-head); font-weight:600; text-transform:uppercase; letter-spacing:.03em;
+  font-size:.98rem; color:#E8EEF6; padding: .6rem .2rem; height: var(--nav-h);
   border-bottom: 3px solid transparent; transition: color .15s, border-color .15s;
 }
 .nav__item:hover .nav__link,
@@ -340,7 +340,7 @@ p { margin: 0 0 1rem; }
 
 /* ---------- Desktop nav switch ---------- */
 @media (min-width: 1024px) {
-  .nav__menu { display:flex; align-items:center; gap: 22px; }
+  .nav__menu { display:flex; align-items:center; gap: 18px; }
   .nav__cta  { display:flex; }
   .nav__toggle { display:none; }
   .drawer { display:none; }

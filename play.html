@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Player Progress Dashboard | Track the 30-Day Journey</title>
-<meta name="description" content="Track gyroball streaks, pitching-machine sessions, box jumps, cage logs, hard-contact and confidence scores, sleep, and nutrition. Make your young hitter&#x27;s progress visible.">
-<link rel="canonical" href="https://kemuelswingacademy.com/progress-dashboard.html">
-<meta property="og:title" content="Player Progress Dashboard | Track the 30-Day Journey">
-<meta property="og:description" content="Track gyroball streaks, pitching-machine sessions, box jumps, cage logs, hard-contact and confidence scores, sleep, and nutrition. Make your young hitter&#x27;s progress visible.">
+<title>Home-Run Timing Game | Hit a Homer, Unlock the 30-Day Deal</title>
+<meta name="description" content="Play the Kemuel Swing Academy home-run timing game. Time your swing, hit a home run, and unlock the 30-day training program for $19.99 plus a free coach session.">
+<link rel="canonical" href="https://kemuelswingacademy.com/play.html">
+<meta property="og:title" content="Home-Run Timing Game | Hit a Homer, Unlock the 30-Day Deal">
+<meta property="og:description" content="Play the Kemuel Swing Academy home-run timing game. Time your swing, hit a home run, and unlock the 30-day training program for $19.99 plus a free coach session.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://kemuelswingacademy.com/assets/img/kemuel-logo-crest.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -130,96 +130,184 @@
 </div>
 
 <main id="main">
-<div class="wrap crumb"><a href="index.html">Home</a> › Track › Progress Dashboard</div>
+<div class="wrap crumb"><a href="index.html">Home</a> › Home-Run Game</div>
 
 <section class="hero">
-  <div class="wrap" style="padding:clamp(36px,6vw,64px) 0">
-    <div data-reveal style="max-width:62ch">
-      <span class="eyebrow" style="color:var(--gold-soft)">Player Progress Dashboard</span>
-      <h1 class="display">Make growth visible</h1>
-      <p class="hero__lead">A preview of the dashboard parents and players use to track the 30-day journey — streaks, cage sessions, box jumps, scores, sleep, and nutrition in one place. The goal is to make improvement something you can see.</p>
+  <div class="wrap" style="padding:clamp(28px,5vw,52px) 0;max-width:860px">
+    <div class="center" data-reveal>
+      <span class="eyebrow shead--center" style="color:var(--gold-soft)">Can you go yard?</span>
+      <h1 class="display">Hit a home run, unlock the deal</h1>
+      <p class="hero__lead mx-auto" style="text-align:center">Watch the pitch. Swing at the perfect moment. Crush a home run and unlock the 30-Day Swing Challenge for <strong>$19.99</strong> (was $99.99) — plus a <strong>free session with any coach</strong>. Same training your player does for real: timing, focus, contact.</p>
     </div>
 
-    <!-- Player profile + rings -->
-    <div class="hero__panel mt-3" data-reveal>
-      <div class="flex items-center wrap-gap gap-3" style="justify-content:space-between">
-        <div class="flex items-center gap-3">
-          <div style="width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-size:1.6rem;color:var(--navy)">K</div>
-          <div>
-            <h3 class="text-white" style="margin-bottom:.1rem">Kemuel · Age 11 · 2B / SS</h3>
-            <span class="badge badge--elite">Elite Student Candidate</span>
-          </div>
+    <!-- GAME -->
+    <div class="game" id="hr-game" data-reveal>
+      <div class="game__hud">
+        <span>Pitch <b id="g-pitch">1</b>/5</span>
+        <span>Hits <b id="g-hits">0</b></span>
+        <span>Strikes <b id="g-strikes">0</b></span>
+        <span id="g-best">Best: —</span>
+      </div>
+      <canvas id="g-canvas" width="700" height="420" aria-label="Home run timing game"></canvas>
+      <div class="game__controls">
+        <button class="btn btn--primary btn--lg" id="g-swing">SWING! <span class="note" style="color:#ffd;font-weight:400">(or press Space / tap)</span></button>
+        <button class="btn btn--ghost btn--sm" id="g-reset">Reset</button>
+      </div>
+      <p class="note center" id="g-msg">Press <b>SWING</b> when the ball reaches the plate. Center it perfectly for a home run.</p>
+    </div>
+
+    <!-- WIN OVERLAY (revealed by JS) -->
+    <div class="card card--feature mt-3" id="g-win" hidden data-reveal>
+      <div class="card__body center">
+        <span class="badge badge--elite">💥 Home Run!</span>
+        <h2 class="mt-1">You earned the deal</h2>
+        <p class="text-muted">Unlock the full 30-Day Swing Challenge for <strong>$19.99</strong> (was $99.99) — and get a <strong>free session with any coach</strong> in the directory when you start.</p>
+        <div class="hero__cta" style="justify-content:center">
+          <a href="REPLACE_STRIPE_LINK" class="btn btn--primary btn--lg">Claim $19.99 + Free Coach Session</a>
+          <a href="coaches.html" class="btn btn--gold">Browse Coaches</a>
         </div>
-        <div class="flex gap-3 wrap-gap">
-          <div class="ring" style="--p:84;--size:86px"><div><div class="ring__label" style="font-size:1.2rem">84</div><div class="ring__sub">Discipline</div></div></div>
-          <div class="ring" style="--p:70;--size:86px;"><div><div class="ring__label" style="font-size:1.2rem">70</div><div class="ring__sub">Confidence</div></div></div>
-          <div class="ring" style="--p:62;--size:86px"><div><div class="ring__label" style="font-size:1.2rem">62</div><div class="ring__sub">Hard-Contact</div></div></div>
-        </div>
+        <p class="note mt-2">Your free coach session is booked after purchase. We don't guarantee specific results or coach availability.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRACKER CARDS -->
+<!-- WHY IT MATTERS -->
 <section class="section section--tint">
-  <div class="wrap">
-    <span class="eyebrow" data-reveal>This Week</span>
-    <h2 data-reveal>Daily mission &amp; weekly trackers</h2>
-    <div class="grid g-4 mt-3">
-      <div class="card card--feature" data-reveal><div class="card__body"><span class="badge badge--featured">Today's Mission</span><h3 class="mt-1">Gyroball + cage</h3><p class="text-muted mb-0">60s each hand, then contact + hard-contact rounds. Log it when done.</p></div></div>
-      <div class="card" data-reveal><div class="card__body"><div class="stat" style="text-align:left"><div class="stat__num" style="color:var(--navy)">18</div><div class="stat__lbl" style="color:var(--steel)">🔥 Gyroball streak (days)</div></div></div></div>
-      <div class="card" data-reveal><div class="card__body"><div class="stat" style="text-align:left"><div class="stat__num" style="color:var(--navy)">3<span style="font-size:1.2rem;color:var(--steel)">/3</span></div><div class="stat__lbl" style="color:var(--steel)">Pitching-machine sessions</div></div></div></div>
-      <div class="card" data-reveal><div class="card__body"><div class="stat" style="text-align:left"><div class="stat__num" style="color:var(--navy)">1<span style="font-size:1.2rem;color:var(--steel)">/1</span></div><div class="stat__lbl" style="color:var(--steel)">Batting practice sessions</div></div></div></div>
-    </div>
-
-    <!-- Box jump progress -->
-    <div class="card mt-3" data-reveal><div class="card__body">
-      <div class="flex items-center" style="justify-content:space-between"><h3 style="margin:0">Box jump progression</h3><span class="badge badge--verified">On track</span></div>
-      <div class="grid g-4 mt-2" style="gap:14px">
-        <div><div class="quiz__bar"><i style="width:100%"></i></div><span class="note">Wk 1 · 30/30 jumps</span></div>
-        <div><div class="quiz__bar"><i style="width:100%"></i></div><span class="note">Wk 2 · 40/40 jumps</span></div>
-        <div><div class="quiz__bar"><i style="width:75%"></i></div><span class="note">Wk 3 · 36/48 jumps</span></div>
-        <div><div class="quiz__bar"><i style="width:0%"></i></div><span class="note">Wk 4 · 0/50 jumps</span></div>
-      </div>
-      <p class="note mt-2">Goal: 200 total quality jumps across 30 days. Remember — step down from the box, never jump down.</p>
-    </div></div>
-  </div>
-</section>
-
-<!-- LOG TEMPLATES -->
-<section class="section">
-  <div class="wrap">
-    <span class="eyebrow" data-reveal>What you log</span>
-    <h2 data-reveal>Simple session logs</h2>
-    <div class="grid g-3 mt-3">
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Pitching-machine log</h3><p class="text-muted">Date, facility, machine speed, rounds, total swings, contact / line-drive / hard-contact counts, weakness focus, confidence before &amp; after.</p></div></div>
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Batting practice log</h3><p class="text-muted">Date, location, separate or after-machine, total swings, focus, best swing note, coach/parent note.</p></div></div>
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Box jump log</h3><p class="text-muted">Date, box height, sets, reps, total jumps, form score, landing control, energy level, notes.</p></div></div>
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Sleep &amp; recovery</h3><p class="text-muted">Hours slept, recovery day taken, soreness check. <a href="sleep-recovery.html" class="text-red" style="text-decoration:underline">Recovery guide.</a></p></div></div>
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Nutrition</h3><p class="text-muted">Pre-cage meal, hydration, recovery snack. <a href="nutrition.html" class="text-red" style="text-decoration:underline">Nutrition plan.</a></p></div></div>
-      <div class="card" data-reveal><div class="card__body"><h3 class="card__title">Notes &amp; video</h3><p class="text-muted">Parent notes, coach notes, before &amp; after swing video placeholders.</p></div></div>
+  <div class="wrap center" data-reveal style="max-width:720px">
+    <h2>Real hitting is timing, focus, and reps</h2>
+    <p class="lead">This game is fun — but the real version is the 30-day plan: gyroball wrist work, pitching-machine timing, box jumps, and a daily ritual you do with your kid that builds discipline on and off the field.</p>
+    <div class="hero__cta" style="justify-content:center">
+      <a href="checkout.html#program" class="btn btn--primary btn--lg">Get the 30-Day Guide — $19.99</a>
+      <a href="free-7-day.html" class="btn btn--ghost">Or start free for 7 days</a>
     </div>
   </div>
 </section>
 
-<!-- BADGE PATH -->
-<section class="section section--navy">
-  <div class="wrap">
-    <span class="eyebrow" style="color:var(--gold-soft)" data-reveal>Badge System</span>
-    <h2 class="text-white" data-reveal>Unlock the Elite Student badge</h2>
-    <div class="grid g-4 mt-3" data-reveal>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><div class="card__body"><span class="badge badge--public">Step 1–3</span><h3 class="text-white mt-1">Rookie → Strong Worker</h3><p style="color:#A9BAD0;margin:0">Complete daily gyroball, weekly cage + box jump goals, and keep your logs current.</p></div></div>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><div class="card__body"><span class="badge badge--featured">Step 4</span><h3 class="text-gold mt-1">Elite Student Candidate</h3><p style="color:#A9BAD0;margin:0">Complete most weekly goals across the month.</p></div></div>
-      <div class="card card--feature" style="background:rgba(201,151,0,.12)"><div class="card__body"><span class="badge badge--elite">Step 5</span><h3 class="text-gold mt-1">Elite Student 🏆</h3><p style="color:#C6D4E6;margin:0">12 machine sessions · 8 box jump sessions · 200 jumps · 30-day gyroball streak · final review.</p></div></div>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)"><div class="card__body"><h3 class="text-white">Then what?</h3><p style="color:#A9BAD0;margin:0 0 12px">See your growth projection and next best step.</p><a href="growth-projection.html" class="btn btn--gold btn--sm">View Projection</a></div></div>
-    </div>
-  </div>
-</section>
+<style>
+.game{background:linear-gradient(180deg,#0a2647,#071E3D);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:16px;box-shadow:var(--shadow-md);margin-top:18px}
+.game__hud{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;color:#A9BAD0;margin-bottom:10px}
+.game__hud b{color:var(--gold);font-size:1.05rem}
+#g-canvas{width:100%;height:auto;display:block;border-radius:var(--r-md);background:#0c2f57;touch-action:manipulation;cursor:pointer}
+.game__controls{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:14px;flex-wrap:wrap}
+#g-msg{margin-top:10px;color:#C6D4E6}
+</style>
 
-<section class="section section--tint" style="padding-top:0"><div class="wrap"><div class="cta-band" data-reveal>
-  <h2 class="text-white">Start tracking your 30 days</h2>
-  <div class="hero__cta" style="justify-content:center"><a href="checkout.html#program" class="btn btn--primary btn--lg">Get the Challenge Kit</a><a href="30-day-challenge.html" class="btn btn--gold btn--lg">See the Program</a></div>
-</div></div></section>
+<script>
+(function(){
+  var cv=document.getElementById('g-canvas'); if(!cv) return;
+  var ctx=cv.getContext('2d'), W=cv.width, H=cv.height;
+  var plateY=H-70, hitLineY=plateY-6;
+  var state, raf;
+  var els={pitch:document.getElementById('g-pitch'),hits:document.getElementById('g-hits'),
+    strikes:document.getElementById('g-strikes'),best:document.getElementById('g-best'),
+    msg:document.getElementById('g-msg'),win:document.getElementById('g-win')};
+
+  function reset(){
+    cancelAnimationFrame(raf);
+    state={pitch:1,hits:0,strikes:0,best:null,phase:'ready',ball:null,swung:false,flash:0,result:''};
+    els.win.hidden=true;
+    updateHUD(); els.msg.innerHTML='Press <b>SWING</b> when the ball reaches the plate. Center it perfectly for a home run.';
+    nextPitch(800);
+    loop();
+  }
+  function updateHUD(){els.pitch.textContent=state.pitch;els.hits.textContent=state.hits;els.strikes.textContent=state.strikes;els.best.textContent='Best: '+(state.best==null?'—':state.best+'%');}
+
+  function nextPitch(delay){
+    state.phase='waiting'; state.swung=false; state.result='';
+    var speed=3.1+Math.random()*1.7;           // px per frame-ish
+    var startDelay=performance.now()+ (delay||500);
+    state.ball={x:W/2+(Math.random()*120-60),y:-30,r:9,speed:speed,start:startDelay,active:false};
+  }
+
+  function judge(){
+    if(state.swung||state.phase!=='pitching') return;
+    state.swung=true;
+    var diff=Math.abs(state.ball.y-hitLineY);
+    var acc=Math.max(0,Math.round(100-(diff/ (H*0.16))*100)); // 0..100
+    if(state.best==null||acc>state.best) state.best=acc;
+    if(diff<=14){ // HOME RUN
+      state.result='HR'; state.hits++; state.flash=20;
+      els.msg.innerHTML='💥 <b>HOME RUN!</b> Perfect timing — you crushed it.';
+      launchHR();
+      win();
+      return;
+    } else if(diff<=42){
+      state.result='HIT'; state.hits++; state.flash=10;
+      els.msg.innerHTML='✅ Base hit! Solid contact — now go for the home run.';
+    } else {
+      state.result='MISS'; state.strikes++;
+      els.msg.innerHTML='❌ Swing and a miss — too '+(state.ball.y<hitLineY?'early':'late')+'. Keep your eye on the plate.';
+    }
+    endPitch();
+  }
+
+  function endPitch(){
+    updateHUD();
+    if(state.strikes>=3){ state.phase='over'; els.msg.innerHTML='🧢 Struck out — but every hitter does. <b>Reset</b> and try again — the deal is one homer away.'; return; }
+    state.pitch++;
+    if(state.pitch>5 && state.hits>0){ els.msg.innerHTML+=' &nbsp; Nice contact! Tap Reset to chase a homer.'; }
+    state.phase='cooldown';
+    setTimeout(function(){ if(state.phase!=='over') nextPitch(300); },900);
+  }
+
+  var hrParticles=[];
+  function launchHR(){ hrParticles=[]; for(var i=0;i<40;i++){hrParticles.push({x:W/2,y:hitLineY,vx:(Math.random()-0.5)*9,vy:-Math.random()*11-3,life:60});} }
+
+  function win(){ state.phase='won'; updateHUD(); els.win.hidden=false; els.win.scrollIntoView({behavior:'smooth',block:'center'}); }
+
+  function loop(){
+    raf=requestAnimationFrame(loop);
+    ctx.clearRect(0,0,W,H);
+    // field
+    ctx.fillStyle='#0c2f57'; ctx.fillRect(0,0,W,H);
+    // grass arc
+    ctx.fillStyle='rgba(255,255,255,.04)'; ctx.beginPath(); ctx.arc(W/2,plateY,W*0.62,Math.PI,2*Math.PI); ctx.fill();
+    // hit zone band
+    ctx.fillStyle='rgba(201,151,0,.18)'; ctx.fillRect(0,hitLineY-14,W,28);
+    ctx.strokeStyle='rgba(201,151,0,.8)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(0,hitLineY); ctx.lineTo(W,hitLineY); ctx.stroke();
+    // home plate
+    ctx.fillStyle='#FAF7F0'; ctx.beginPath();
+    ctx.moveTo(W/2-26,plateY); ctx.lineTo(W/2+26,plateY); ctx.lineTo(W/2+26,plateY+14); ctx.lineTo(W/2,plateY+26); ctx.lineTo(W/2-26,plateY+14); ctx.closePath(); ctx.fill();
+    // label
+    ctx.fillStyle='rgba(201,151,0,.9)'; ctx.font='700 13px Barlow Condensed, sans-serif'; ctx.textAlign='left'; ctx.fillText('SWING ZONE', 12, hitLineY-20);
+
+    var b=state.ball;
+    if(b){
+      if(!b.active && performance.now()>=b.start){ b.active=true; state.phase='pitching'; }
+      if(b.active && state.phase==='pitching'){
+        b.y+=b.speed; b.r=9+(b.y/H)*10;
+        if(b.y>plateY+30 && !state.swung){ // passed without swing
+          state.swung=true; state.result='MISS'; state.strikes++;
+          els.msg.innerHTML='❌ Took a strike — you didn\'t swing. Watch for the ball in the gold zone.';
+          endPitch();
+        }
+      }
+      // draw ball
+      if(b.y>-20){
+        ctx.beginPath(); ctx.arc(b.x,b.y,b.r,0,7); ctx.fillStyle='#fff'; ctx.fill();
+        ctx.strokeStyle='#D62828'; ctx.lineWidth=1.5;
+        ctx.beginPath(); ctx.arc(b.x-b.r*0.4,b.y,b.r*0.9,-0.6,0.6); ctx.stroke();
+        ctx.beginPath(); ctx.arc(b.x+b.r*0.4,b.y,b.r*0.9,Math.PI-0.6,Math.PI+0.6); ctx.stroke();
+      }
+    }
+    // flash
+    if(state.flash>0){ ctx.fillStyle='rgba(231,101,36,'+(state.flash/30)+')'; ctx.fillRect(0,0,W,H); state.flash--; }
+    // HR particles
+    if(hrParticles.length){
+      for(var i=0;i<hrParticles.length;i++){var p=hrParticles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.35;p.life--;ctx.fillStyle='rgba(201,151,0,'+Math.max(0,p.life/60)+')';ctx.fillRect(p.x,p.y,4,4);}
+      hrParticles=hrParticles.filter(function(p){return p.life>0;});
+    }
+  }
+
+  function swing(e){ if(e){e.preventDefault();} if(state.phase==='pitching') judge(); }
+  document.getElementById('g-swing').addEventListener('click',swing);
+  cv.addEventListener('pointerdown',swing);
+  document.addEventListener('keydown',function(e){ if(e.code==='Space'){ var g=document.getElementById('hr-game'); if(g){swing(e);} } });
+  document.getElementById('g-reset').addEventListener('click',reset);
+  reset();
+})();
+</script>
 
 </main>
 <div class="seam seam--gold" aria-hidden="true"></div>

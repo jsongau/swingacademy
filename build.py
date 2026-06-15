@@ -50,7 +50,9 @@ NAV = """<a class="skip" href="#main">Skip to content</a>
       <div class="nav__item">
         <a href="#" class="nav__link" aria-haspopup="true" aria-expanded="false">Train <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></a>
         <div class="mega" data-open="false">
-          <a href="30-day-challenge.html">30-Day Swing Challenge<small>Build the swing in 30 days</small></a>
+          <a href="free-7-day.html">Free 7-Day Plan<small>Start free, no card</small></a>
+          <a href="30-day-challenge.html">30-Day Swing Challenge<small>Full program — $19.99</small></a>
+          <a href="play.html">🎮 Home-Run Game<small>Hit a homer, unlock the deal</small></a>
           <a href="30-day-challenge.html#gyroball">Gyroball Wrist Training</a>
           <a href="30-day-challenge.html#pitching-machine">Pitching-Machine Standards</a>
           <a href="30-day-challenge.html#box-jumps">Box Jump Progression</a>
@@ -117,7 +119,7 @@ NAV = """<a class="skip" href="#main">Skip to content</a>
   <div class="acc">
     <button class="acc__head" aria-expanded="false">Train <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
     <div class="acc__panel" data-open="false">
-      <a href="30-day-challenge.html">30-Day Swing Challenge</a><a href="30-day-challenge.html#gyroball">Gyroball Wrist Training</a><a href="30-day-challenge.html#pitching-machine">Pitching-Machine Standards</a><a href="30-day-challenge.html#box-jumps">Box Jump Progression</a><a href="30-day-challenge.html#batting-practice">Batting Practice Routine</a><a href="sleep-recovery.html">Sleep &amp; Recovery</a><a href="nutrition.html">Baseball Nutrition Plan</a><a href="progress-dashboard.html">Progress Tracker</a>
+      <a href="free-7-day.html">Free 7-Day Plan</a><a href="30-day-challenge.html">30-Day Swing Challenge</a><a href="play.html">Home-Run Game</a><a href="30-day-challenge.html#gyroball">Gyroball Wrist Training</a><a href="30-day-challenge.html#pitching-machine">Pitching-Machine Standards</a><a href="30-day-challenge.html#box-jumps">Box Jump Progression</a><a href="sleep-recovery.html">Sleep &amp; Recovery</a><a href="nutrition.html">Baseball Nutrition Plan</a><a href="progress-dashboard.html">Progress Tracker</a>
     </div>
     <button class="acc__head" aria-expanded="false">Find <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
     <div class="acc__panel" data-open="false">
@@ -156,7 +158,7 @@ FOOTER = """<div class="seam seam--gold" aria-hidden="true"></div>
       </div>
       <div>
         <h4>Kemuel Swing Academy</h4>
-        <a href="index.html">Home</a><a href="30-day-challenge.html">30-Day Challenge</a><a href="progress-dashboard.html">Progress Log</a><a href="sleep-recovery.html">Sleep &amp; Recovery</a><a href="nutrition.html">Baseball Nutrition Plan</a><a href="checkout.html">Checkout</a><a href="reviews.html">Reviews</a>
+        <a href="index.html">Home</a><a href="free-7-day.html">Free 7-Day Plan</a><a href="30-day-challenge.html">30-Day Challenge</a><a href="play.html">Home-Run Game</a><a href="checkout.html">Get the 30-Day Guide</a><a href="progress-dashboard.html">Progress Log</a><a href="reviews.html">Reviews</a>
       </div>
       <div>
         <h4>Baseball Lessons</h4>
@@ -198,8 +200,8 @@ FOOTER = """<div class="seam seam--gold" aria-hidden="true"></div>
   </div>
 </footer>
 <div class="mobile-bar">
-  <a href="30-day-challenge.html"><svg viewBox="0 0 24 24" fill="none"><path d="M5 3l14 9-14 9V3Z" fill="currentColor"/></svg> Start Challenge</a>
-  <a href="coaches.html"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Find a Coach</a>
+  <a href="checkout.html#program"><svg viewBox="0 0 24 24" fill="none"><path d="M5 3l14 9-14 9V3Z" fill="currentColor"/></svg> Get 30-Day $19.99</a>
+  <a href="play.html"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v10M7 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Play &amp; Win</a>
 </div>
 <script src="assets/js/kemuel.js"></script>
 </body>
@@ -248,8 +250,14 @@ PAGES = {
     title="Reviews & Player Stories | Kemuel Swing Academy",
     desc="Parent reviews, player stories, coach testimonials, and facility feedback from Kemuel Swing Academy baseball families. Real progress, not fake perfection."),
  "checkout": dict(
-    title="Checkout | Kemuel Swing Academy Training Kits",
-    desc="Choose your training kit: Kemuel Swing Starter, Challenge Kit, or Academy Pro. Add a 10-session coaching course, cage session pack, or tryout prep evaluation."),
+    title="Get Started | Free 7-Day Plan, 30-Day Program & Gyroball",
+    desc="Start the free 7-day swing plan, unlock the full 30-day program for $19.99 (was $99.99), and get the gyroball wrist trainer. Build a better hitter and a more disciplined student."),
+ "free-7-day": dict(
+    title="Free 7-Day Baseball Swing Plan for Young Players | Kemuel Swing Academy",
+    desc="Get a free 7-day youth baseball swing plan: daily gyroball wrist work, swing reps, and a progress checklist parents and players do together. No card required."),
+ "play": dict(
+    title="Home-Run Timing Game | Hit a Homer, Unlock the 30-Day Deal",
+    desc="Play the Kemuel Swing Academy home-run timing game. Time your swing, hit a home run, and unlock the 30-day training program for $19.99 plus a free coach session."),
 }
 
 def build():
